@@ -16,6 +16,7 @@ export const Product=()=>{
             console.log(res.data , "productApi");
         res.data.forEach((val:any)=>{
             let data = val
+            data['isActive'] = false
               data['qty']=1
               console.log(data ,"mydata")
               finaldata.push(data)

@@ -1,3 +1,23 @@
+.main-bg {
+  background: var(--main-bg) !important;
+}
+.loginContainer{
+  margin-top: 10%;
+}
+
+input:focus, button:focus {
+  border: 1px solid var(--main-bg) !important;
+  box-shadow: none !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--main-bg) !important;
+  border-color: var(--main-bg) !important;
+}
+
+.card, .btn, input{
+  border-radius:0 !important;
+}
 
 .cardscontainer{
  margin-top: 143px !important;
@@ -7,9 +27,11 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+  
+ border: none !important;
 }
-.cards:hover{
-  box-shadow: 0.3rem 0.3rem rgb(83, 83, 83), -0.3rem -0.3rem #ccc;
+.cards:hover{ box-shadow: 0 0 10px;
+
 }
 .card-img-top{
   width: 150px !important;
@@ -42,4 +64,15 @@
 
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
+}
+
+.loader {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  border-radius: 4px;
+  margin-top: 20%;
+
 }

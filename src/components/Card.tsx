@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { setAddToCart } from "../redux/product";
 import { productApi } from "../Utility/Environment";
 import { Header } from "./Header";
+import { Loader } from "./Loder";
 
 
  const Card =(productDetails:any)=>{
@@ -13,20 +14,27 @@ import { Header } from "./Header";
   const[count,setCount]=useState<number>()
   const[sendCount,setSendCount]=useState<number>();
 const [hideCart,setHideCart]=useState(false);
-
+  const[btnDisplay , setBtnDisplay] = useState(false)
   const[arr , setArr] = useState<any>([])
   const [datas , setDatas] = useState<any>()
 console.log(productDetails , "productDetails i cart");
 let get:any[] = []
-const handleSetData =(res:any)=>{
-  arr.push(res);
-localStorage.setItem('data' ,JSON.stringify(arr));
- get = JSON.parse(localStorage.getItem('data') || "")
- setDatas(get)
+const handleSetData =async(res:any)=>{
+    arr.push(res);
+await localStorage.setItem('data' ,JSON.stringify(arr));
+  get = await JSON.parse(localStorage.getItem('data') || "")
+ setDatas(get);
+ (get || []).map((res:any)=>{
+productDetails.productDetails.forEach((items:any)=>{
+if(res.id === items.id){
+return items.isActive = true
+}
+})
+})
 }
     return<>
     <Header setQuery={setQuery} get={datas} hideCart={hideCart}/>
-    <div className="container cardscontainer">
+    {productDetails.productDetails.length >0  ? <div className="container cardscontainer">
       <div className="row">
         {productDetails.productDetails.filter((result:any)=>result.title.toLowerCase().includes(query)).map((res:any,i:any)=>{
       return<>
@@ -36,19 +44,14 @@ localStorage.setItem('data' ,JSON.stringify(arr));
   <div className="card-body">
     <h5 className="card-title">{res.title}</h5>
     <p>Price: {res.price}</p>
-    {/* <div className="mb-3">
-    <p className="card-text">{res.description}</p>
-    </div> */}
-    <button  onClick={()=>handleSetData(res)} className="btn btn-primary">+</button>
+    <button disabled={res.isActive} onClick={()=>handleSetData(res)} className="btn btn-primary">+</button>
   </div>
 </div>
 </div>
       </>
     })}
-    
       </div>
-    </div>
-   
+    </div>:<Loader/>}
     </>
 }
 

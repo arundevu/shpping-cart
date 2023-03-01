@@ -31,7 +31,7 @@ export const Header=({get,setQuery,hideCart,backBtn}:any,)=>{
     <ul className=" navbar-nav  ml-5" style={{width:"80%"}}>   
       <li style={{width:"100%"}}>
     <form className=" d-flex justify-content-center  ml-5">
-      <input className="form-control " onChange={e=>setQuery(e.target.value)}  type="search" placeholder="Search" />
+      <input className="form-control " onChange={e=>setQuery(e.target.value)}  type="search" placeholder="Search product name" />
     </form>
     </li>
     </ul>
