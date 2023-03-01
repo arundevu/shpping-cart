@@ -8,9 +8,9 @@ import { Product } from "../pages/Product";
 export const RoutePath =()=>{
     return<>
     <Routes>
-     <Route path='*' element={<Login/>}/>
+     {/* <Route path='*' element={<Login/>}/> */}
      <Route path='/Register' element={<Product/>}  />
-     <Route path='/Product' element={<Product/>}/>
+     <Route path='*' element={<Product/>}/>
      <Route path='/Cart' element={<Cart/>}/>
      </Routes>
      
