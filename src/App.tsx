@@ -21,10 +21,9 @@ useEffect(()=>{
   return (
     <div className="App">
       {/* {auth ? <Header setAuth={setAuth} />:null} */}
-     {/* {auth ? <RoutePath/>: (  <Routes>
-     <Route path='*' element={<Login setAuth={setAuth} />}/> </Routes> )}  */}
-     <Header/>
-     <RoutePath/>
+     {auth ? <RoutePath/>: (  <Routes>
+     <Route path='*' element={<Login setAuth={setAuth} />}/> </Routes> )} 
+   
     </div>
   );
 }

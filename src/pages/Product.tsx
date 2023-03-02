@@ -22,8 +22,6 @@ export const Product=()=>{
               finaldata.push(data)
                 
             })
-           
-
             setProductDetails(finaldata)
             dispatch(setProduct(res.data))
         })
