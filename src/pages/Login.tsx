@@ -35,8 +35,7 @@ export const Login=({setAuth}:any)=>{
          
       }
     return<>
-    {load  && <Loader/> }
-    {!load  &&<div className="loginContainer">
+    {load  ? <Loader/> :<div className="loginContainer">
    <div className="container mt-5">
     <div className="row justify-content-center  mt-5">
       <div className="col-lg-4 col-md-6 col-sm-6">
@@ -66,6 +65,7 @@ export const Login=({setAuth}:any)=>{
     </div>
   </div>
 </div>}
+  
     
    
     </>
