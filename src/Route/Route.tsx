@@ -9,7 +9,7 @@ export const RoutePath =()=>{
     return<>
     <Routes>
      {/* <Route path='*' element={<Login/>}/> */}
-     <Route path='/Register' element={<Product/>}  />
+     {/* <Route path='/Register' element={<Product/>}  /> */}
      <Route path='*' element={<Product/>}/>
      <Route path='/Cart' element={<Cart/>}/>
      </Routes>
