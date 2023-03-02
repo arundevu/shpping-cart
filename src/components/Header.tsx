@@ -18,6 +18,7 @@ export const Header=({get,setQuery,hideCart,backBtn}:any,)=>{
     if(localStorage.getItem('data')){
     const get = JSON.parse(localStorage.getItem('data') || "")
     setcount(get.length)
+
     }
   },[get])
     return<>
@@ -44,7 +45,7 @@ export const Header=({get,setQuery,hideCart,backBtn}:any,)=>{
     </Link>
     </div>:"" }
     {backBtn == false ?    <Link className="nav-link" to="/Product" >Back</Link>:""}
-    <button className="logout" onClick={handleLogout} >Logout</button>
+    <button className="logout" onClick={handleLogout}>Logout</button>
   
     </div>
     
